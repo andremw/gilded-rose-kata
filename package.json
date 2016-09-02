@@ -26,7 +26,8 @@
     "esnext": true,
     "space": 2,
     "rules": {
-      "no-negated-condition": 0
+      "no-negated-condition": 0,
+      "complexity": ["error", { "max": 3 }]
     }
   }
 }
