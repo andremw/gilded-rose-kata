@@ -130,6 +130,21 @@ test('Backstage passes', t => {
   t.end();
 });
 
+test('Conjured', t => {
+  t.test('quality degrades twice as fast as normal items', st => {
+    const item = gildedRose('Conjured', 4, 2);
+    item.updateQuality();
+    st.equal(item.quality, 2, assertionMessage(item.daysRemaining, 2));
+
+    item.updateQuality();
+    st.equal(item.quality, 0, assertionMessage(item.daysRemaining, 0));
+
+    st.end();
+  });
+
+  t.end();
+});
+
 function assertionMessage(daysRemaining, quality) {
   return `${daysRemaining} days remaining: quality is ${quality}`;
 }
