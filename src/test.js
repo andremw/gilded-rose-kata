@@ -25,12 +25,12 @@ test('Normal item', t => {
   });
 
   t.test('quality is never less than 0', st => {
-    const normal = gildedRose('Normal', 1, 2);
-    normal.updateQuality();
-    st.equal(normal.quality, 0, assertionMessage(normal.daysRemaining, 0));
+    const item = gildedRose('Normal', 1, 2);
+    item.updateQuality();
+    st.equal(item.quality, 0, assertionMessage(item.daysRemaining, 0));
 
-    normal.updateQuality();
-    st.equal(normal.quality, 0, assertionMessage(normal.daysRemaining, 0));
+    item.updateQuality();
+    st.equal(item.quality, 0, assertionMessage(item.daysRemaining, 0));
 
     st.end();
   });
@@ -51,12 +51,12 @@ test('Aged Brie', t => {
   });
 
   t.test('quality is never more than 50', st => {
-    const brie = gildedRose('Aged Brie', 49, 2);
-    brie.updateQuality();
-    st.equal(brie.quality, 50, assertionMessage(brie.daysRemaining, 50));
+    const item = gildedRose('Aged Brie', 49, 2);
+    item.updateQuality();
+    st.equal(item.quality, 50, assertionMessage(item.daysRemaining, 50));
 
-    brie.updateQuality();
-    st.equal(brie.quality, 50, assertionMessage(brie.daysRemaining, 50));
+    item.updateQuality();
+    st.equal(item.quality, 50, assertionMessage(item.daysRemaining, 50));
     st.end();
   });
 
